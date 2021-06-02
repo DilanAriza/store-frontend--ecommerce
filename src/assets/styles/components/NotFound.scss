@@ -1,0 +1,28 @@
+.not-found {
+    background-color: white;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .not-found__content-message {
+        text-align: center;
+        code {
+            color: red;
+        }
+        p {
+            padding-bottom: 20px;
+        }
+        a {
+            color: white;
+            text-decoration: none;
+            cursor: pointer;
+            padding: 15px 20px;
+            background-color: black;
+            &:hover {
+                transition: all .2s;
+                background-color: white;
+                color: black;
+            }
+        }
+    }
+}

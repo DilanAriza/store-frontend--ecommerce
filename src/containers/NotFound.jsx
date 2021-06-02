@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-// import '../assets/styles/components/NotFound.scss';
+import '../assets/styles/components/NotFound.scss';
 
 const NotFound = () => (
     <div className="not-found">
