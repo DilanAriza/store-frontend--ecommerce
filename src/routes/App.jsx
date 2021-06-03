@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Layout from '../components/Layout';
 import Home from '../containers/Home';
+import Item from '../containers/Item';
 // import Login from '../containers/Login';
 import NotFound from '../containers/NotFound';
 // import Player from '../containers/Player';
@@ -12,6 +13,7 @@ const App = () => (
     <Layout>
         <Switch>
             <Route exact path="/" component={Home} />
+            <Route path="/item/:id" component={Item} />
             {/* <Route exact path="/login" component={Login} />
             <Route exact path="/register" component={Register} />
             <Route exact path="/player/:id" component={Player}/> */}
