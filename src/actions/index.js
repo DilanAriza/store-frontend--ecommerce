@@ -3,6 +3,7 @@ export const actions = {
     registerRequest: 'REGISTER_REQUEST',
     logoutRequest: 'LOGOUT_REQUEST',
     addToCart: 'ADD_TO_CART',
+    getInfoProduct: 'GET_INFO_PRODUCT'
 };
 
 
@@ -25,3 +26,8 @@ export const addToCart = payload => ({
     type: actions.addToCart,
     payload,
 });
+
+export const getInfoProduct = payload => ({
+    type: actions.getInfoProduct,
+    payload,
+})
