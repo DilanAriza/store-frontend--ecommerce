@@ -9,10 +9,6 @@ import Header from '../components/Header';
 // Styles
 import '../assets/styles/containers/Item.scss';
 
-//Icons
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faStar } from '@fortawesome/free-solid-svg-icons';
-
 //Actions
 import { addToCart, getInfoProduct } from '../actions';
 
