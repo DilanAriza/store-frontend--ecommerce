@@ -36,16 +36,5 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: space-around;
-        .card {
-            width: 18em;
-            margin: 20px 0;
-            transition: all .3s;
-            transform: translateY(0);
-            &:hover {
-                cursor: pointer;
-                transform: translateY(-10px);
-                transition: all .3s;
-            }
-        }
     }
 }
