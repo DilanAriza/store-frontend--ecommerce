@@ -1,8 +1,6 @@
 //Libs
 import React, { useState, useLayoutEffect } from 'react';
 import Rating from '@material-ui/lab/Rating';
-import Typography from '@material-ui/core/Typography';
-import Box from '@material-ui/core/Box';
 import {connect} from 'react-redux';
 
 //Components
