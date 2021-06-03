@@ -1,5 +1,8 @@
 const initialState = {
-    "user": {},
+    "user": {
+        "name": "Dilan Santiago Ariza Cañon",
+        "email": "dilansantiagoariza@gmail.com",
+    },
     "playing": {},
     "myCart": [],
     "trends": [{

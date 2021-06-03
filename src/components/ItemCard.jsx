@@ -15,10 +15,20 @@ const ItemCard = (props) =>{
         });
     };
 
+    const formatCurrency = (locales, currency, fractionDigits, number) =>{
+        var formatted = new Intl.NumberFormat(locales, {
+            style: 'currency',
+            currency: currency, 
+            minimumFractionDigits: fractionDigits
+        }).format(number);
+
+        return formatted;
+    }
+
     return(
         <div key={id} >
             <div className="modal fade" id="itemModalInformation" tabIndex="-1" aria-labelledby="labelItemModal" aria-hidden="true">
-                    <div className="modal-dialog">
+                    <div className="modal-dialog modal-lg">
                         <div className="modal-content">
                             <div className="modal-header">
                                 <h5 className="modal-title" id="labelItemModal">Nombre del producto: {title}</h5>
@@ -28,23 +38,22 @@ const ItemCard = (props) =>{
                                 <h6>Descripción</h6>
                                 <p>{description}</p>
                                 <h6>Precio</h6>
-                                <p>{price}</p>
+                                {formatCurrency("es-CO", "COP", 2, price)}
                                 <h6>Rating</h6>
                                 <p>{rating}</p>
                             </div>
                             <div className="modal-footer">
-                                <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                                <button type="button" className="btn btn-success" onClick={handleAddToCart}>Agregar al carrito</button>
+                                <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                <button type="button" className="btn btn-success" onClick={handleAddToCart}>Mas información</button>
                             </div>
                         </div>
                     </div>
                 </div>
             <button className="card" data-bs-toggle="modal" data-bs-target="#itemModalInformation">
-                <img src={cover} className="card-img-top" alt="..."/>
+                <img src={cover} className="card-img-top" alt="cover-image-card"/>
                 <div className="card-body">
                     <h5 className="card-title">{title}</h5>
                     <p className="card-text">{description}</p>
-                    {/* <Button onClick={handleAddToCart} className="btn btn-dark">Añadir al carrito</Button> */}
                 </div>
             </button>
         </div>

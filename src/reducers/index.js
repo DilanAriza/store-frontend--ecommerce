@@ -1,8 +1,5 @@
 import { actions } from '../actions';
 
-const action = {
-    type: '1'
-}
 
 const reducer = (state, action) => {
     switch (action.type) {
@@ -21,24 +18,25 @@ const reducer = (state, action) => {
             //         myList: state.myList.filter(items => items.id !== action.payload)
             //     }
 
-            // case actions.loginReqest:
-            //     return {
-            //         ...state,
-            //         user: action.payload,
-            //     }
+        case actions.loginReqest:
+            return {
+                ...state,
+                user: action.payload,
+            }
 
-            // case actions.logoutRequest:
-            //     return {
-            //         ...state,
-            //         user: action.payload,
-            //     }
+        case actions.logoutRequest:
+            return {
+                ...state,
+                user: action.payload,
+            }
 
-            // case actions.registerRequest:
-            //     console.log(action.payload);
-            //     return {
-            //         ...state,
-            //         user: action.payload,
-            //     }
+        case actions.registerRequest:
+            console.log(action.payload);
+            console.log('Cerrando sesión');
+            return {
+                ...state,
+                user: action.payload,
+            }
             // case actions.getVideoSource:
             //     return {
             //         ...state,
