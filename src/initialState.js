@@ -8,7 +8,6 @@ const initialState = {
     "trends": [{
         "id": 1,
         "title": "Dark",
-        "description": "lorem impsum",
         "price": 12,
         "rating": "3",
         "cover": "https://images.unsplash.com/photo-1612462765825-15204611a1b3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1080&q=80",
@@ -16,7 +15,6 @@ const initialState = {
     }, {
         "id": 2,
         "title": "In the Dark",
-        "description": "lorem impsum",
         "price": 12,
         "rating": "3",
         "cover": "https://images.unsplash.com/photo-1553335719-239c2726dd15?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1080&q=80",
@@ -24,7 +22,6 @@ const initialState = {
     }, {
         "id": 3,
         "title": "In the Dark",
-        "description": "lorem impsum",
         "price": 12,
         "rating": "3",
         "cover": "https://images.unsplash.com/photo-1520975829288-0493fb89e574?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1080&q=80",
@@ -32,7 +29,6 @@ const initialState = {
     }, {
         "id": 4,
         "title": "In the Dark",
-        "description": "lorem impsum",
         "price": 12,
         "rating": "3",
         "cover": "https://images.unsplash.com/flagged/photo-1577854362336-ec93f79d06ac?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1080&q=80",
@@ -40,7 +36,6 @@ const initialState = {
     }, {
         "id": 5,
         "title": "In the Dark",
-        "description": "lorem impsum",
         "price": 12,
         "rating": "3",
         "cover": "https://images.unsplash.com/photo-1571682262898-48532c58b3a1?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1080&q=80",
@@ -48,7 +43,6 @@ const initialState = {
     }, {
         "id": 6,
         "title": "In the Dark",
-        "description": "lorem impsum",
         "price": 12,
         "rating": "3",
         "cover": "https://images.unsplash.com/photo-1548454782-15b189d129ab?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1080&q=80",
@@ -56,7 +50,6 @@ const initialState = {
     }, {
         "id": 7,
         "title": "In the Dark",
-        "description": "lorem impsum",
         "price": 12,
         "rating": "3",
         "cover": "https://images.unsplash.com/photo-1495385794356-15371f348c31?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1080&q=80",
@@ -64,7 +57,6 @@ const initialState = {
     }, {
         "id": 8,
         "title": "In the Dark",
-        "description": "lorem impsum",
         "price": 12,
         "rating": "3",
         "cover": "https://images.unsplash.com/photo-1545291730-faff8ca1d4b0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1080&q=80",

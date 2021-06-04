@@ -14,22 +14,51 @@ import { addToCart, getInfoProduct } from '../actions';
 
 const Item = props => {
     
+    // Search information of product to props
+    useLayoutEffect(()=>{
+        props.getInfoProduct(id);
+    }, []);
+
+    // Define const
     const {id} = props.match.params;
-
-    console.log(props.product);
-
     const product = props.product;
+    const rating = parseInt(product.rating);
 
+    // Execute multiple functions in onClick addToCart Button
+    const onClickFunctionButton = ()=>{
+        handleToggleNotificationAddToCart()
+        handleAddToCart()
+    }
+
+    const onClickHandlerButton = ()=>{
+        handleToggleNotificationAddToCart(true)
+    }
+    
+    // Define 
+    const [isActiveNotificationAddToCart, setActiveNotificationAddToCart] = useState(false);
+    const [itemAmount, setItemAmount] = useState(1);
+    
+    // Set Amount items to cart
+    const handleItemAmount = (event) => {
+        setItemAmount(event.target.value);
+    }
+
+    // Controll display notification addtocart
+    const handleToggleNotificationAddToCart = (onClickFunctionButton) => {
+        (!onClickFunctionButton && isActiveNotificationAddToCart) 
+        ? setActiveNotificationAddToCart(isActiveNotificationAddToCart) 
+        : setActiveNotificationAddToCart(!isActiveNotificationAddToCart)
+    }
+    
+    // Send to Reducers
     const handleAddToCart = () => {
         props.addToCart({
-            id: product.id, 
-            cover: product.cover, 
-            title: product.title, 
-            description: product.description, 
-            rating: product.rating
+            id: product.id,
+            amount: itemAmount
         });
     };
-
+    
+    // Functions to format price
     const formatCurrency = (locales, currency, fractionDigits, number) =>{
         var formatted = new Intl.NumberFormat(locales, {
             style: 'currency',
@@ -39,16 +68,6 @@ const Item = props => {
 
         return formatted;
     }
-
-    const handleChange = (event) => {
-        console.log(event.target.value)
-    }
-
-    useLayoutEffect(()=>{
-        props.getInfoProduct(id);
-    }, []);
-
-    const rating = parseInt(product.rating);
 
     return (
         <>
@@ -62,8 +81,7 @@ const Item = props => {
                 <div className="pt-3 px-3 pt-md-5 px-md-5 overflow-hidden colum-information bg-white">
                     <h2>{product.title}</h2>
                     <p className="lead title-product">Precio:
-                        <span class="badge bg-light text-dark p-1">{formatCurrency("en-US", "USD", 2, product.price)} USD</span>
-                        {/* <span className="text-primary m-2">{formatCurrency("es-CO", "COP", 2, product.price)}</span> */}
+                        <span className="badge bg-light text-dark p-1">{formatCurrency("en-US", "USD", 2, product.price)} USD</span>
                     </p>
                     <div className="rating-content">
                         <h4>Rating</h4>
@@ -79,16 +97,39 @@ const Item = props => {
                             <select 
                                 className="form-select" 
                                 aria-label="Default select example"
-                                onChange={handleChange}
+                                onChange={handleItemAmount}
                             >
-                                <option value="1" selected>1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
+                                <option defaultValue="1">1</option>
+                                <option defaultValue="2">2</option>
+                                <option defaultValue="3">3</option>
                             </select>
                         </div>
                         <br />
-                            <button className="btn btn-dark me-3">Agregar a mi carrito</button>
-                            <button className="btn btn-primary">Comprar</button>
+                        <button 
+                            type="button"
+                            className="btn btn-dark me-3"
+                            onClick={onClickFunctionButton}
+                        >
+                            Agregar a mi carrito
+                        </button>
+                        <button className="btn btn-primary">Comprar</button>
+
+                        {/* Notificatión addToCard */}
+                        <div className="position-fixed bottom-0 end-0 p-3 notification-to-cart">
+                            <div id="liveToast" className={isActiveNotificationAddToCart ? "toast show bg-dark": "toast hide bg-dark"} role="alert" aria-live="assertive" aria-atomic="true">
+                                <div className="toast-header bg-dark">
+                                    <svg className="bd-placeholder-img rounded me-2" width="20" height="20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
+                                        <rect width="100%" height="100%" fill="#007aff"></rect>
+                                    </svg>
+                                    <strong className="me-auto text-white">¡Hecho!</strong>  
+                                    <small className="text-white">Ahora</small>
+                                    <button type="button" className="btn-close btn-close-white" data-bs-dismiss="toast" aria-label="Close" onClick={onClickHandlerButton}></button>
+                                </div>
+                                <div className="toast-body text-white">
+                                    El producto se ha añadido a tu carrito  
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <hr className="dropdown-divider"/>
                     <div className="description-container">
@@ -99,29 +140,6 @@ const Item = props => {
                     
                 </div>
             </div>
-            <div className="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
-                <div className="col-md-5 p-lg-5 mx-auto my-5">
-                    <h1 className="display-4 fw-normal">Punny headline</h1>
-                    <p className="lead fw-normal">And an even wittier subheading to boot. Jumpstart your marketing efforts with this example based on Apple’s marketing pages.</p>
-                    <a className="btn btn-outline-secondary" href="#">Coming soon</a>
-                </div>
-            </div>
-        {/* <div className="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
-                <div className="bg-light me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
-                <div className="my-3 p-3">
-                    <h2 className="display-5">Another headline</h2>
-                    <p className="lead">And an even wittier subheading.</p>
-                </div>
-                <div className="bg-body shadow-sm mx-auto style-headline-1-"></div>
-                </div>
-                <div className="bg-light me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
-                <div className="my-3 py-3">
-                    <h2 className="display-5">Another headline</h2>
-                    <p className="lead">And an even wittier subheading.</p>
-                </div>
-                <div className="bg-body shadow-sm mx-auto style-headline-1"></div>
-                </div>
-            </div> */}
         </main>
         </>
     );
@@ -129,7 +147,8 @@ const Item = props => {
 
 const mapStateToProps = state => {
     return {
-        product: state.product
+        product: state.product,
+        myCart: state.myCart
     }
 }
 
