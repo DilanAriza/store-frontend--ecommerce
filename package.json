@@ -6,6 +6,8 @@
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "build": "webpack --mode production",
+        "build:install": "npm i -g serve",
+        "publish": "serve -s dist/",
         "start": "webpack serve --open --mode development"
     },
     "keywords": [
