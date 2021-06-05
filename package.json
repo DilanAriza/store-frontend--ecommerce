@@ -1,7 +1,7 @@
 {
     "name": "store",
     "version": "1.0.0",
-    "description": "",
+    "description": "Store web app to e commerce example",
     "main": "index.js",
     "engines": {
         "node": "14.17.0",
@@ -9,9 +9,7 @@
     },
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "build": "webpack --mode production",
-        "build:install": "npm i -g serve",
-        "publish": "serve -s dist/",
+        "build": "webpack --mode production && npm i -g serve && serve -s dist/",
         "start": "webpack serve --open --mode development"
     },
     "keywords": [
