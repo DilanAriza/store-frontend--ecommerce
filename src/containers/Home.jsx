@@ -52,34 +52,6 @@ const Home = (props) => {
                 </div>
         </div>
         }
-        {/* <Search isHome/>
-        {myList.length > 0 &&
-            <Categories title="Mi Lista">
-            <Carousel>
-                {myList.map(item =>
-                    <CarouselItem 
-                        key={item.id} 
-                        {...item} 
-                        isList
-                    />
-                )}
-            </Carousel>
-            </Categories>
-        }
-        <Categories title="Tendencias">
-            <Carousel>
-            {trends.map(item =>
-                <CarouselItem key={item.id} {...item} isList={false}/>
-            )}
-            </Carousel>
-        </Categories>
-        <Categories title="Originales de Platzi Video">
-            <Carousel>
-            {originals.map(item =>
-                <CarouselItem key={item.id} {...item} isList={false}/>
-            )}
-            </Carousel>
-        </Categories> */}
         </>
     );
 }
