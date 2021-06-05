@@ -9,7 +9,8 @@
     },
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "start": "webpack serve --open --mode development",
+        "start": "webpack serve --open --mode production",
+        "start:dev": "webpack serve --open --mode development",
         "build": "webpack --mode production",
         "build:install": "npm i -g serve",
         "publish": "serve -s dist/"
