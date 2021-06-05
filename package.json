@@ -9,11 +9,9 @@
     },
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "start": "webpack serve --open --mode production",
-        "start:dev": "webpack serve --open --mode development",
+        "dev": "webpack serve --open --mode development",
         "build": "webpack --mode production",
-        "build:install": "npm i -g serve",
-        "publish": "serve -s dist/"
+        "start": "node server.js"
     },
     "keywords": [
         "javascript",
@@ -39,6 +37,7 @@
         "eslint-plugin-import": "^2.23.4",
         "eslint-plugin-jsx-a11y": "^6.4.1",
         "eslint-plugin-react": "^7.24.0",
+        "express": "^4.17.1",
         "md5": "^2.3.0",
         "prop-types": "^15.7.2",
         "react": "^17.0.2",
