@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import {connect} from 'react-redux';
+import Rating from '@material-ui/lab/Rating';
 
 //Styles 
 import '../assets/styles/components/ItemCard.scss';
@@ -17,7 +18,9 @@ const ItemCard = (props) =>{
                 <img src={cover} className="card-img-top" alt="cover-image-card"/>
                 <div className="card-body">
                     <h5 className="card-title">{title}</h5>
-                    <p className="card-text">{description}</p>
+                    <span>
+                        <Rating name="read-only" value={rating} readOnly/>
+                    </span>
                 </div>
             </Link>
         </div>

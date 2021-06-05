@@ -134,8 +134,7 @@ const Item = props => {
                     <hr className="dropdown-divider"/>
                     <div className="description-container">
                         <h4>Descripción</h4>
-                        <p className="lead">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt dolore magni vel, tenetur labore quas, odit eaque quos nobis inventore mollitia temporibus cumque alias sit ea cupiditate perferendis exercitationem incidunt. Ullam temporibus quas perspiciatis ex aliquam nihil eveniet consequuntur quam illum quos. Doloribus, quibusdam. Veniam esse asperiores ratione a velit dolorem voluptatum, nostrum quia pariatur! Provident assumenda error sint? Optio alias nulla, iure veritatis maxime dolor esse, aspernatur consequuntur, incidunt aperiam eveniet ipsa dignissimos tenetur facilis dolore porro reiciendis aliquam quaerat amet illum? Officia sed vitae a harum voluptate minima expedita, laudantium enim neque accusantium nam atque unde ab cum suscipit numquam deleniti aperiam nulla voluptates nemo inventore magni libero impedit. Dolorum quas hic sunt minus beatae quasi architecto et dolor nemo consectetur!{product.description}</p>
+                        <p className="lead">{product.description}</p>
                     </div>
                     
                 </div>
