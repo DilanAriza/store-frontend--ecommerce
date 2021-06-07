@@ -29,11 +29,9 @@ main {
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                margin: 0;
-                width: 20%;
+                width: 30%;
             }
             select {
-                margin: 0;
                 width: 40%;
             }
         }
@@ -68,6 +66,16 @@ body {
 @media (min-width: 768px) {
     .flex-md-equal>* {
         flex: 1;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .text-helper {
+        width: 50% !important;
+    }
+    select {
+        margin: 0;
+        width: 50%;
     }
 }
 
