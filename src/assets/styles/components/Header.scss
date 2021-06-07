@@ -4,10 +4,151 @@ header {
     z-index: 1000;
     background-color: white;
     .container {
-        .svg-cart-class {
-            img {
-                width: 20px;
-                height: 20px;
+        .cart-image {
+            a {
+                img {
+                    width: 32px;
+                    height: 32px;
+                }
+            }
+        }
+    }
+    .links-navbar {
+        button {
+            visibility: hidden;
+            display: none;
+        }
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .header {
+        .container {
+            .cart-image {
+                display: none;
+                visibility: hidden;
+            }
+            form {
+                display: none;
+                visibility: hidden;
+            }
+            .links-navbar {
+                button {
+                    display: block;
+                    visibility: visible;
+                    border: none;
+                    svg {
+                        width: 30px;
+                        height: 30px;
+                    }
+                }
+            }
+            .sub-container-header {
+                display: flex !important;
+                align-items: center !important;
+                justify-content: space-between !important;
+                .list-nav-items-store {
+                    width: auto;
+                    li {
+                        a {
+                            visibility: hidden;
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 780px) {
+    header {
+        .search-bar {
+            visibility: hidden;
+            display: none;
+        }
+        .cart-image {
+            visibility: hidden;
+            display: none;
+        }
+        .links-navbar {
+            button {
+                display: block;
+                visibility: visible;
+                border: none;
+            }
+        }
+    }
+    .header {
+        .container {
+            .sub-container-header {
+                display: flex !important;
+                align-items: center !important;
+                justify-content: space-between !important;
+                .list-nav-items-store {
+                    width: auto;
+                    li {
+                        a {
+                            visibility: hidden;
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 430px) {
+    .header {
+        .container {
+            .sub-container-header {
+                display: flex !important;
+                align-items: center !important;
+                justify-content: space-between !important;
+                .list-nav-items-store {
+                    width: auto;
+                    li {
+                        a {
+                            visibility: hidden;
+                            display: none;
+                        }
+                        button {
+                            svg {
+                                width: 20px;
+                                height: 20px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 330px) {
+    .header {
+        .container {
+            .sub-container-header {
+                display: flex !important;
+                align-items: center !important;
+                justify-content: space-between !important;
+                .list-nav-items-store {
+                    width: auto;
+                    li {
+                        a {
+                            visibility: hidden;
+                            display: none;
+                        }
+                        button {
+                            padding: 0.5rem;
+                            svg {
+                                width: 20px;
+                                height: 20px;
+                            }
+                        }
+                    }
+                }
             }
         }
     }
