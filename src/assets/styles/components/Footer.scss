@@ -19,3 +19,25 @@
         }
     }
 }
+
+@media screen and (max-width: 380px) {
+    .footer {
+        height: 13vh;
+        a {
+            text-align: center;
+            font-size: 0.8rem;
+            padding: 10px 20px !important;
+        }
+    }
+}
+
+@media screen and (max-width: 330px) {
+    .footer {
+        height: 13vh;
+        a {
+            text-align: center;
+            font-size: 0.8rem;
+            padding: 10px 20px !important;
+        }
+    }
+}
