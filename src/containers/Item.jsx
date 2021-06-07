@@ -75,7 +75,7 @@ const Item = props => {
         <main>
 
             <div className="d-md-flex flex-md-equal w-100 container-principal-information">
-                <div className="bg-light pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden colum-information">
+                <div className="bg-light pt-md-5 px-md-5 text-center overflow-hidden colum-information">
                     <img className="image-principal-product" src={product.cover} alt="item-image" />
                 </div>
                 <div className="pt-3 px-3 pt-md-5 px-md-5 overflow-hidden colum-information bg-white">
@@ -125,7 +125,7 @@ const Item = props => {
                                     <small className="text-white">Ahora</small>
                                     <button type="button" className="btn-close btn-close-white" data-bs-dismiss="toast" aria-label="Close" onClick={onClickHandlerButton}></button>
                                 </div>
-                                <div className="toast-body text-white">
+                                <div className="toast-body text-white body-alert-to-cart">
                                     El producto se ha añadido a tu carrito  
                                 </div>
                             </div>
@@ -134,7 +134,7 @@ const Item = props => {
                     <hr className="dropdown-divider"/>
                     <div className="description-container">
                         <h4>Descripción</h4>
-                        <p className="lead">{product.description}</p>
+                        <p>{product.description}</p>
                     </div>
                     
                 </div>
