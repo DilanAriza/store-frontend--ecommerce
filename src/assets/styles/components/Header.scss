@@ -19,6 +19,20 @@ header {
             display: none;
         }
     }
+    .acount-dropdown {
+        position: absolute;
+        inset: auto auto 0px 0px;
+        margin: 0px;
+        transform: translate(0px, -34px);
+    }
+    .user-login-icon-slideber {
+        width: 32px !important;
+        height: 32px !important;
+        path {
+            width: 32px !important;
+            height: 32px !important;
+        }
+    }
 }
 
 @media screen and (max-width: 1000px) {
@@ -28,7 +42,7 @@ header {
                 display: none;
                 visibility: hidden;
             }
-            form {
+            .search-bar {
                 display: none;
                 visibility: hidden;
             }
