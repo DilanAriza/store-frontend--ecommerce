@@ -1,20 +1,21 @@
-//Libs
+// Libs
 import React, { useState, useLayoutEffect } from 'react';
 import {connect} from 'react-redux';
 
-//Components
-import Header from '../components/Header';
-
 // Styles
 import '../assets/styles/containers/Cart.scss';
+
+// Icons
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronDown, faInfoCircle, faMinus, faPlus, faTrash } from '@fortawesome/free-solid-svg-icons';
+import { faMinus, faPlus, faTrash } from '@fortawesome/free-solid-svg-icons';
+
+// Actions
+import { deleteItemToCart, getInfoProduct } from '../actions';
 
 const ItemCartToPay = props => {
-    const {id, amount, myCart, trends} = props;
+    const {amount, myCart, trends, id} = props;
     
-    console.log(props);
-
+    // Define consts
     const searchItem = trends.filter(item => item.id === id);
     const item = searchItem[0];
 
@@ -29,6 +30,11 @@ const ItemCartToPay = props => {
         return formatted;
     }
 
+    // Detele item in cart
+    const deleteItemToCart = ()=>{
+        props.deleteItemToCart(id);
+    }
+    
     return (
         <>
         <div className="row mb-4">
@@ -66,7 +72,7 @@ const ItemCartToPay = props => {
                     </div>
                     <div className="d-flex justify-content-between align-items-center options-item-selector">
                         <div>
-                            <button href="#!" type="button" className="small text-uppercase mr-3">
+                            <button href="#!" type="button" className="small text-uppercase mr-3" onClick={deleteItemToCart}>
                                 <FontAwesomeIcon icon={faTrash}/>
                                 Eliminar producto
                             </button>
@@ -89,8 +95,14 @@ const mapStateToProps = state => {
     return {
         myCart: state.myCart,
         trends: state.trends,
-        user: state.user
+        user: state.user,
+        product: state.product
     }
 }
 
-export default connect(mapStateToProps, null)(ItemCartToPay)
+const mapDispatchToProps = {
+    deleteItemToCart,
+    getInfoProduct
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(ItemCartToPay)

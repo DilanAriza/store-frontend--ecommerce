@@ -50,11 +50,12 @@ const reducer = (state, action) => {
                 myCart: [...state.myCart, action.payload]
             }
 
-            // case actions.deleteFavorite:
-            //     return {
-            //         ...state,
-            //         myList: state.myList.filter(items => items.id !== action.payload)
-            //     }
+        case actions.deleteItemToCart:
+            // Function to delete producto of my cart
+            return {
+                ...state,
+                myCart: state.myCart.filter(items => items.id !== action.payload)
+            }
 
         case actions.loginReqest:
             return {

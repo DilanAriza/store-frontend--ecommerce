@@ -3,7 +3,8 @@ export const actions = {
     registerRequest: 'REGISTER_REQUEST',
     logoutRequest: 'LOGOUT_REQUEST',
     addToCart: 'ADD_TO_CART',
-    getInfoProduct: 'GET_INFO_PRODUCT'
+    getInfoProduct: 'GET_INFO_PRODUCT',
+    deleteItemToCart: 'DELETE_PRODUCT_TO_CART'
 };
 
 
@@ -30,4 +31,9 @@ export const addToCart = payload => ({
 export const getInfoProduct = payload => ({
     type: actions.getInfoProduct,
     payload,
+});
+
+export const deleteItemToCart = payload => ({
+    type: actions.deleteItemToCart,
+    payload
 })
