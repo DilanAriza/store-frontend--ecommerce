@@ -5,6 +5,7 @@ import {connect} from 'react-redux';
 
 //Components
 import Header from '../components/Header';
+import GoToTop from '../components/GoToTop';
 
 // Styles
 import '../assets/styles/containers/Item.scss';
@@ -140,6 +141,7 @@ const Item = props => {
                 </div>
             </div>
         </main>
+        <GoToTop />
         </>
     );
 }

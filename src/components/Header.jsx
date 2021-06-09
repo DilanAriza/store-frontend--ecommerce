@@ -97,7 +97,7 @@ const Header = props => {
                                     <strong>Fabian Bermudez</strong>
                                 </a>
                                 <ul className="dropdown-menu text-small shadow" aria-labelledby="dropdownUser2" data-popper-placement="top-start">
-                                    <li><Link to="/my-cart" className="dropdown-item">Mi Carrito</Link></li>
+                                    <li><Link to="/my-cart" className="dropdown-item" data-bs-dismiss="offcanvas" aria-label="Close">Mi Carrito</Link></li>
                                     <li><a className="dropdown-item" href="#">Mi Cuenta</a></li>
                                     <li><a className="dropdown-item" href="#">Configración</a></li>
                                     <li><hr className="dropdown-divider" /></li>

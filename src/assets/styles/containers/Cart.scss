@@ -65,3 +65,13 @@ input[type=number]::-webkit-outer-spin-button {
 input[type=number] {
     -moz-appearance: textfield;
 }
+
+@media screen and (max-width: 370px) {
+    .cart-page{
+        .amount-selector{
+            button{
+                width: 1.5rem;
+            }
+        }
+    }
+}

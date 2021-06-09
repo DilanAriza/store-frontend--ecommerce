@@ -4,10 +4,7 @@ import Layout from '../components/Layout';
 import Cart from '../containers/Cart';
 import Home from '../containers/Home';
 import Item from '../containers/Item';
-// import Login from '../containers/Login';
 import NotFound from '../containers/NotFound';
-// import Player from '../containers/Player';
-// import Register from '../containers/Register';
 
 const App = () => (
     <BrowserRouter>

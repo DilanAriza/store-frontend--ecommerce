@@ -1,15 +1,18 @@
-//Libs
+// Libs
 import React, { useState, useLayoutEffect } from 'react';
 import {connect} from 'react-redux';
 
-//Components
+// Components
 import Header from '../components/Header';
+import ItemCartToPay from '../components/ItemCartToPay';
+import GoToTop from '../components/GoToTop';
 
 // Styles
 import '../assets/styles/containers/Cart.scss';
+
+// Icons
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown, faInfoCircle, faMinus, faPlus, faTrash } from '@fortawesome/free-solid-svg-icons';
-import ItemCartToPay from '../components/ItemCartToPay';
 
 //Actions
 // import { addToCart, getInfoProduct } from '../actions';
@@ -36,10 +39,8 @@ const Cart = props => {
     return (
         <>
         <Header />
-        <section className="cart-page">
+        <div className="cart-page">
             <div className="container">
-                <section>
-
                 <div className="row">
 
                     <div className="col-lg-8">
@@ -98,29 +99,29 @@ const Cart = props => {
                     <div className="mb-3">
                         <div className="pt-4">
 
-                        <h5 className="mb-3">Cantidad total</h5>
+                            <h5 className="mb-3">Cantidad total</h5>
 
-                        <ul className="list-group list-group-flush">
-                            <li className="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
-                            Monto temporal
-                            <span>$25.98</span>
-                            </li>
-                            <li className="list-group-item d-flex justify-content-between align-items-center px-0">
-                            Envío
-                            <span>Gratis</span>
-                            </li>
-                            <li className="list-group-item d-flex justify-content-between align-items-center border-0 px-0 mb-3">
-                            <div>
-                                <strong>Cantidad total a pagar</strong>
-                                <strong>
-                                <p className="mb-0">(incluye IVA)</p>
-                                </strong>
-                            </div>
-                            <span><strong>$53.98</strong></span>
-                            </li>
-                        </ul>
+                            <ul className="list-group list-group-flush">
+                                <li className="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
+                                    Monto temporal
+                                    <span>$25.98</span>
+                                </li>
+                                <li className="list-group-item d-flex justify-content-between align-items-center px-0">
+                                    Envío
+                                    <span>Gratis</span>
+                                </li>
+                                <li className="list-group-item d-flex justify-content-between align-items-center border-0 px-0 mb-3">
+                                    <div>
+                                        <strong>Cantidad total a pagar</strong>
+                                        <strong>
+                                            <p className="mb-0">(incluye IVA)</p>
+                                        </strong>
+                                    </div>
+                                    <span><strong>$53.98</strong></span>
+                                </li>
+                            </ul>
 
-                        <button type="button" className="btn btn-primary btn-block">Verificar compra</button>
+                            <button type="button" className="btn btn-primary btn-block">Verificar compra</button>
 
                         </div>
                     </div>
@@ -145,10 +146,9 @@ const Cart = props => {
                     </div>
 
                 </div>
-
-                </section>
             </div>
-            </section>
+        </div>
+        <GoToTop />
         </>
     );
 }

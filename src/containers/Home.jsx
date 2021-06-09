@@ -5,16 +5,12 @@ import React, { useState, useEffect } from 'react';
 import {connect} from 'react-redux';
 
 //Components
-// import Search from '../components/Search';
-// import Categories from '../components/Categories';
-// import Carousel from '../components/Carousel';
-// import CarouselItem from '../components/CarouselItem';
 import Header from '../components/Header';
-// import useInitialState from '../hooks/useInitialState';
+import ItemCard from '../components/ItemCard';
+import GoToTop from '../components/GoToTop';
 
 // Styles
 import '../assets/styles/containers/Home.scss';
-import ItemCard from '../components/ItemCard';
 
 
 const Home = (props) => {
@@ -52,6 +48,7 @@ const Home = (props) => {
                 </div>
         </div>
         }
+        <GoToTop />
         </>
     );
 }
