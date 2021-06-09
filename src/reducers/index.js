@@ -50,6 +50,14 @@ const reducer = (state, action) => {
                 myCart: [...state.myCart, action.payload]
             }
 
+            // Get info of producto of state to props 
+        case actions.getInfoProduct:
+            return {
+                ...state,
+                product: state.trends.find(item => item.id === Number(action.payload)) || []
+            }
+
+
         case actions.deleteItemToCart:
             // Function to delete producto of my cart
             return {
@@ -57,6 +65,14 @@ const reducer = (state, action) => {
                 myCart: state.myCart.filter(items => items.id !== action.payload)
             }
 
+        case actions.addPriceToCart:
+            return {
+                ...state,
+                priceCart: state.priceCart + action.payload,
+            }
+
+
+            // Administrative actions
         case actions.loginReqest:
             return {
                 ...state,
@@ -76,11 +92,7 @@ const reducer = (state, action) => {
                 ...state,
                 user: action.payload,
             }
-        case actions.getInfoProduct:
-            return {
-                ...state,
-                product: state.trends.find(item => item.id === Number(action.payload)) || []
-            }
+
 
         default:
             return state

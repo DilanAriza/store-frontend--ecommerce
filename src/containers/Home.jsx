@@ -16,8 +16,6 @@ import '../assets/styles/containers/Home.scss';
 const Home = (props) => {
     const { myCart, trends, originals } = props;
 
-    console.log(myCart)
-
     return (
         <>
         <Header />

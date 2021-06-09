@@ -11,7 +11,7 @@ import GoToTop from '../components/GoToTop';
 import '../assets/styles/containers/Item.scss';
 
 //Actions
-import { addToCart, getInfoProduct } from '../actions';
+import { addToCart, getInfoProduct, addPriceToCart } from '../actions';
 
 const Item = props => {
     
@@ -41,7 +41,8 @@ const Item = props => {
     
     // Set Amount items to cart
     const handleItemAmount = (event) => {
-        setItemAmount(event.target.value);
+        let amount = parseInt(event.target.value);
+        setItemAmount(amount);
     }
 
     // Controll display notification addtocart
@@ -57,6 +58,7 @@ const Item = props => {
             id: product.id,
             amount: itemAmount
         });
+        props.addPriceToCart((product.price*itemAmount));
     };
     
     // Functions to format price
@@ -155,7 +157,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = {
     addToCart,
-    getInfoProduct
+    getInfoProduct,
+    addPriceToCart
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Item)

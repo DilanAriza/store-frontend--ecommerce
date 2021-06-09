@@ -5,6 +5,7 @@ const initialState = {
     },
     "product": {},
     "myCart": [],
+    "priceCart": 0,
     "trends": [{
         "id": 1,
         "title": "Gabardina Caballero",

@@ -4,7 +4,8 @@ export const actions = {
     logoutRequest: 'LOGOUT_REQUEST',
     addToCart: 'ADD_TO_CART',
     getInfoProduct: 'GET_INFO_PRODUCT',
-    deleteItemToCart: 'DELETE_PRODUCT_TO_CART'
+    deleteItemToCart: 'DELETE_PRODUCT_TO_CART',
+    addPriceToCart: 'ADD_PRICE_TO_CART',
 };
 
 
@@ -35,5 +36,10 @@ export const getInfoProduct = payload => ({
 
 export const deleteItemToCart = payload => ({
     type: actions.deleteItemToCart,
-    payload
+    payload,
+});
+
+export const addPriceToCart = payload => ({
+    type: actions.addPriceToCart,
+    payload,
 })
