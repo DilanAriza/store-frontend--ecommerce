@@ -88,16 +88,30 @@ const reducer = (state, action) => {
 
             // Add Price to cart
         case actions.addPriceToCart:
+            state.myCart.map((item) => {
+                if (item.id === action.payload.id) {
+                    item.amount++;
+                }
+            });
+
             return {
                 ...state,
-                priceCart: state.priceCart + action.payload,
+                myCart: [...state.myCart],
+                priceCart: state.priceCart + action.payload.price,
             }
 
             // Remove Price to cart
         case actions.removePriceToCart:
+            state.myCart.map((item) => {
+                if (item.id === action.payload.id) {
+                    item.amount--;
+                }
+            });
+
             return {
                 ...state,
-                priceCart: state.priceCart - action.payload,
+                myCart: [...state.myCart],
+                priceCart: state.priceCart - action.payload.price,
             }
 
             // Handle price to cart

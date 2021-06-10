@@ -14,16 +14,10 @@ import '../assets/styles/containers/Cart.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown, faInfoCircle, faMinus, faPlus, faTrash } from '@fortawesome/free-solid-svg-icons';
 
-//Actions
-// import {getInfoProduct } from '../actions';
-
-
 const Cart = props => {
     const {myCart, priceCart, tax} = props;
-    
     const items = myCart.length;
-
-    console.log(myCart)
+    const [isActiveCupon, setIsActiveCupon] = useState(false);
 
     // Functions to format price
     const formatCurrency = (locales, currency, fractionDigits, number) =>{
@@ -34,6 +28,10 @@ const Cart = props => {
         }).format(number);
 
         return formatted;
+    }
+
+    const handleCupon = ()=>{
+        setIsActiveCupon(!isActiveCupon);
     }
 
     return (
@@ -127,12 +125,12 @@ const Cart = props => {
                     </div>
                     <div className="mb-3 code-discount-optional">
                         <div className="pt-4">
-                            <a className="dark-grey-text d-flex justify-content-between" href="#">
+                            <a className="dark-grey-text d-flex justify-content-between" href="#" onClick={handleCupon}>
                                 Agregar código de descuento -optional
                                 <span><FontAwesomeIcon className="pt-1" icon={faChevronDown} /></span>
                             </a>
 
-                            <div className="collapse show">
+                            <div className={isActiveCupon ? "collapse show": "collapse"}>
                                 <div className="mt-3">
                                     <div className="md-form md-outline mb-0">
                                         <input type="text"className="form-control font-weight-light"
@@ -161,10 +159,6 @@ const mapStateToProps = state => {
         priceCart: state.priceCart,
         tax: state.tax,
     }
-}
-
-const mapDispatchToProps = {
-    
 }
 
 export default connect(mapStateToProps, null)(Cart)

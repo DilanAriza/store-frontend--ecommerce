@@ -14,14 +14,19 @@ import {
     deleteItemToCart, 
     getInfoProduct, 
     removePriceToCart,
+    addPriceToCart,
 } from '../actions';
 
 const ItemCartToPay = props => {
-    const {amount, myCart, trends, id} = props;
+    const {myCart, trends, id} = props;
+    
+    // Define 
+    // const [amountState, setAmountState] = useState(amount);
     
     // Define consts
     const searchItem = trends.filter(item => item.id === id);
     const item = searchItem[0];
+    const product = myCart.find(item => item.id === id);
 
     // Functions to format price
     const formatCurrency = (locales, currency, fractionDigits, number) =>{
@@ -37,9 +42,29 @@ const ItemCartToPay = props => {
     // Detele item in cart
     const deleteItemToCart = ()=>{
         props.deleteItemToCart(id);
-        props.removePriceToCart((item.price*amount));
+        props.removePriceToCart((item.price*product.amount));
+    }
+
+    // Add Amount to Cart
+    const addAmountToCart = () => {
+        props.addPriceToCart({
+            id: id,
+            price: item.price
+        });
+    }
+
+    // Remove Amount to Cart
+    const removeAmountToCart = () => {
+        props.removePriceToCart({
+            id: id,
+            price: item.price
+        });
     }
     
+    const controllerChange = (e)=>{
+        // console.log(e)
+    }
+
     return (
         <>
         <div className="row mb-4">
@@ -61,11 +86,20 @@ const ItemCartToPay = props => {
                         </div>
                         <div className="amount-selector">
                             <div className="def-number-input number-input safari_only mb-0 w-100">
-                                <button>
+                                <button onClick={removeAmountToCart}>
                                     <FontAwesomeIcon icon={faMinus} />
                                 </button>
-                                <input className="quantity" min="0" name="quantity" defaultValue={amount} type="number" />
-                                <button>
+                                <input 
+                                    className="quantity" 
+                                    min="0" 
+                                    name="quantity" 
+                                    placeholder={product.amount}
+                                    value={product.amount}
+                                    type="number"
+                                    onChange={controllerChange}
+                                />
+                                {/* <displayInputElement /> */}
+                                <button onClick={addAmountToCart}>
                                     <FontAwesomeIcon icon={faPlus}/>
                                 </button>
                             </div>
@@ -108,7 +142,8 @@ const mapStateToProps = state => {
 const mapDispatchToProps = {
     deleteItemToCart,
     getInfoProduct,
-    removePriceToCart
+    removePriceToCart,
+    addPriceToCart,
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(ItemCartToPay)

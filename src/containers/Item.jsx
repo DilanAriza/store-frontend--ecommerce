@@ -58,30 +58,12 @@ const Item = props => {
         ? setActiveNotificationAddToCart(isActiveNotificationAddToCart) 
         : setActiveNotificationAddToCart(!isActiveNotificationAddToCart)
     }
-
-    // const deletePriceInCart = (id)=>{
-    //     myCart.map(item =>{
-    //         if(item.id === id){
-    //             props.removePriceToCart(product.price * item.amount);
-    //         }
-    //     });
-
-    //     props.addPriceToCart((product.price*itemAmount));
-    // }
-
     // Send to Reducers
     const handleAddToCart = () => {
         props.addToCart({
             id: product.id,
             amount: itemAmount
         });
-
-        // props.changeItemMount({
-        //     id: product.id,
-        //     amount: itemAmount   
-        // });
-
-        // props.addPriceToCart}()
     };
     
     // Functions to format price
