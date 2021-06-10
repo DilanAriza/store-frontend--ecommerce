@@ -10,7 +10,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMinus, faPlus, faTrash } from '@fortawesome/free-solid-svg-icons';
 
 // Actions
-import { deleteItemToCart, getInfoProduct } from '../actions';
+import { 
+    deleteItemToCart, 
+    getInfoProduct, 
+    removePriceToCart,
+} from '../actions';
 
 const ItemCartToPay = props => {
     const {amount, myCart, trends, id} = props;
@@ -33,6 +37,7 @@ const ItemCartToPay = props => {
     // Detele item in cart
     const deleteItemToCart = ()=>{
         props.deleteItemToCart(id);
+        props.removePriceToCart((item.price*amount));
     }
     
     return (
@@ -102,7 +107,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = {
     deleteItemToCart,
-    getInfoProduct
+    getInfoProduct,
+    removePriceToCart
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(ItemCartToPay)

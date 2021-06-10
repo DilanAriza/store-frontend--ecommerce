@@ -6,6 +6,8 @@ export const actions = {
     getInfoProduct: 'GET_INFO_PRODUCT',
     deleteItemToCart: 'DELETE_PRODUCT_TO_CART',
     addPriceToCart: 'ADD_PRICE_TO_CART',
+    removePriceToCart: 'REMOVE_PRICE_TO_CART',
+    changeItemMount: 'CHANGE_ITEM_MOUNT',
 };
 
 
@@ -42,4 +44,14 @@ export const deleteItemToCart = payload => ({
 export const addPriceToCart = payload => ({
     type: actions.addPriceToCart,
     payload,
-})
+});
+
+export const removePriceToCart = payload => ({
+    type: actions.removePriceToCart,
+    payload,
+});
+
+export const changeItemMount = payload => ({
+    type: actions.changeItemMount,
+    payload,
+});

@@ -5,6 +5,7 @@ const initialState = {
     },
     "product": {},
     "myCart": [],
+    "tax": 5,
     "priceCart": 0,
     "trends": [{
         "id": 1,

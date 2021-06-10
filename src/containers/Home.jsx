@@ -14,7 +14,8 @@ import '../assets/styles/containers/Home.scss';
 
 
 const Home = (props) => {
-    const { myCart, trends, originals } = props;
+    const { myCart, trends, tax } = props;
+    console.log(props)
 
     return (
         <>
@@ -55,7 +56,7 @@ const mapStateToProps = state => {
     return {
         myCart: state.myCart,
         trends: state.trends,
-        originals: state.originals,
+        tax: state.tax,
     };
 } 
 

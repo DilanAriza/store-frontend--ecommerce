@@ -10,6 +10,13 @@ const reducer = (state, action) => {
             // Variable to ecual or other amont
             let itemIcual;
 
+            // Variable to save amount if and only if, is a diferent amont to state and payload
+            let saveAmount;
+
+            // Search product and save price amount product from payload
+            const product = state.trends.find(item => item.id === action.payload.id);
+            let priceProduct = (product.price * action.payload.amount);
+
             // Verify if this id exist in the state
             if (existId) {
 
@@ -17,11 +24,17 @@ const reducer = (state, action) => {
 
                     // Verify if the id and payload is ecual in the state 
                     if (item.id === action.payload.id && item.amount === action.payload.amount) {
+
                         itemIcual = 'ecual';
                     }
 
                     // Verify if the id is ecual and amount isn't ecual, correct this shit! :)
                     if (item.id === action.payload.id && item.amount !== action.payload.amount) {
+
+                        // Save amount to minus for state and plus payload
+                        saveAmount = item.amount;
+
+                        // Save amount in the item
                         item.amount = action.payload.amount;
                         itemIcual = 'd-amount';
                     }
@@ -29,25 +42,33 @@ const reducer = (state, action) => {
                     // return item maped to state (default or updated)
                     return item;
                 })
-            }
 
-            // return ecual information to props
-            if (itemIcual === 'ecual') {
-                return {...state }
-            }
 
-            // return direfent information to props (IMPORTANT REVIEW THIS SHIT, UPDATE THIS SHIT PLEACE!)
-            if (itemIcual === 'd-amount') {
+                // return ecual information to props
+                if (itemIcual === 'ecual') {
+                    return {...state }
+                }
+
+                // return direfent information to props (IMPORTANT REVIEW THIS SHIT, UPDATE THIS SHIT PLEACE!)
+                if (itemIcual === 'd-amount') {
+
+                    // the previous value is subtracted from the product amount and updated to the new one
+                    const priceToCart = ((state.priceCart - (product.price * saveAmount)) + priceProduct);
+
+                    return {
+                        ...state,
+                        myCart: [...state.myCart],
+                        priceCart: priceToCart,
+                    }
+                }
+            } else {
+
+                // Return data aditional to props
                 return {
                     ...state,
-                    myCart: [...state.myCart]
+                    myCart: [...state.myCart, action.payload],
+                    priceCart: priceProduct + state.priceCart,
                 }
-            }
-
-            // Return data aditional to props
-            return {
-                ...state,
-                myCart: [...state.myCart, action.payload]
             }
 
             // Get info of producto of state to props 
@@ -58,19 +79,47 @@ const reducer = (state, action) => {
             }
 
 
-        case actions.deleteItemToCart:
             // Function to delete producto of my cart
+        case actions.deleteItemToCart:
             return {
                 ...state,
                 myCart: state.myCart.filter(items => items.id !== action.payload)
             }
 
+            // Add Price to cart
         case actions.addPriceToCart:
             return {
                 ...state,
                 priceCart: state.priceCart + action.payload,
             }
 
+            // Remove Price to cart
+        case actions.removePriceToCart:
+            return {
+                ...state,
+                priceCart: state.priceCart - action.payload,
+            }
+
+            // Handle price to cart
+        case actions.changeItemMount:
+            const { id, amount } = action.payload;
+            const existItem = state.myCart.find(item => item.id === id);
+            console.log(action.payload);
+            console.log(existItem);
+
+            // console.log(existItem.amount);
+
+
+            if (existItem) {
+                if (existItem.amount === amount) {
+                    console.log('nice')
+                }
+            }
+
+            return {
+                ...state,
+                priceCart: state.priceCart + action.payload.amount,
+            }
 
             // Administrative actions
         case actions.loginReqest:

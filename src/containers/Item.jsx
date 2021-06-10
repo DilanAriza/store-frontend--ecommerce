@@ -11,7 +11,13 @@ import GoToTop from '../components/GoToTop';
 import '../assets/styles/containers/Item.scss';
 
 //Actions
-import { addToCart, getInfoProduct, addPriceToCart } from '../actions';
+import { 
+    addToCart, 
+    getInfoProduct, 
+    addPriceToCart, 
+    removePriceToCart,
+    changeItemMount
+} from '../actions';
 
 const Item = props => {
     
@@ -24,6 +30,7 @@ const Item = props => {
     const {id} = props.match.params;
     const product = props.product;
     const rating = parseInt(product.rating);
+    const myCart = props.myCart;
 
     // Execute multiple functions in onClick addToCart Button
     const onClickFunctionButton = ()=>{
@@ -51,14 +58,30 @@ const Item = props => {
         ? setActiveNotificationAddToCart(isActiveNotificationAddToCart) 
         : setActiveNotificationAddToCart(!isActiveNotificationAddToCart)
     }
-    
+
+    // const deletePriceInCart = (id)=>{
+    //     myCart.map(item =>{
+    //         if(item.id === id){
+    //             props.removePriceToCart(product.price * item.amount);
+    //         }
+    //     });
+
+    //     props.addPriceToCart((product.price*itemAmount));
+    // }
+
     // Send to Reducers
     const handleAddToCart = () => {
         props.addToCart({
             id: product.id,
             amount: itemAmount
         });
-        props.addPriceToCart((product.price*itemAmount));
+
+        // props.changeItemMount({
+        //     id: product.id,
+        //     amount: itemAmount   
+        // });
+
+        // props.addPriceToCart}()
     };
     
     // Functions to format price
@@ -151,14 +174,17 @@ const Item = props => {
 const mapStateToProps = state => {
     return {
         product: state.product,
-        myCart: state.myCart
+        myCart: state.myCart,
+        priceCart: state.priceCart,
     }
 }
 
 const mapDispatchToProps = {
     addToCart,
     getInfoProduct,
-    addPriceToCart
+    addPriceToCart,
+    removePriceToCart,
+    changeItemMount
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Item)

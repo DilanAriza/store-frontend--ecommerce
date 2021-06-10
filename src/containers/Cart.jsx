@@ -15,14 +15,15 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown, faInfoCircle, faMinus, faPlus, faTrash } from '@fortawesome/free-solid-svg-icons';
 
 //Actions
-// import { addToCart, getInfoProduct } from '../actions';
+// import {getInfoProduct } from '../actions';
 
 
 const Cart = props => {
-    
-    const {myCart, priceCart} = props;
+    const {myCart, priceCart, tax} = props;
     
     const items = myCart.length;
+
+    console.log(myCart)
 
     // Functions to format price
     const formatCurrency = (locales, currency, fractionDigits, number) =>{
@@ -113,10 +114,10 @@ const Cart = props => {
                                     <div>
                                         <strong>Cantidad total a pagar</strong>
                                         <strong>
-                                            <p className="mb-0">(incluye IVA)</p>
+                                            <p className="mb-0">(incluye IVA de {tax})</p>
                                         </strong>
                                     </div>
-                                    <span><strong>$53.98</strong></span>
+                                    <span><strong>{formatCurrency("en-US", "USD", 2, ((priceCart / 100) * tax + (priceCart)))}</strong></span>
                                 </li>
                             </ul>
 
@@ -157,7 +158,8 @@ const mapStateToProps = state => {
         myCart: state.myCart,
         trends: state.trends,
         user: state.user,
-        priceCart: state.priceCart
+        priceCart: state.priceCart,
+        tax: state.tax,
     }
 }
 
