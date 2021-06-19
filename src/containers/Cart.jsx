@@ -13,6 +13,7 @@ import '../assets/styles/containers/Cart.scss';
 // Icons
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown, faInfoCircle, faMinus, faPlus, faTrash } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
 
 const Cart = props => {
     const {myCart, priceCart, tax} = props;
@@ -32,6 +33,10 @@ const Cart = props => {
 
     const handleCupon = ()=>{
         setIsActiveCupon(!isActiveCupon);
+    }
+
+    const handlePromo = (e)=>{
+        console.log(e.target.value);
     }
 
     return (
@@ -112,14 +117,14 @@ const Cart = props => {
                                     <div>
                                         <strong>Cantidad total a pagar</strong>
                                         <strong>
-                                            <p className="mb-0">(incluye IVA de {tax})</p>
+                                            <p className="mb-0">(incluye IVA de {tax}%)</p>
                                         </strong>
                                     </div>
                                     <span><strong>{formatCurrency("en-US", "USD", 2, ((priceCart / 100) * tax + (priceCart)))}</strong></span>
                                 </li>
                             </ul>
 
-                            <button type="button" className="btn btn-primary btn-block">Verificar compra</button>
+                            <Link type="button" to="/checkout-cart" className="btn btn-primary btn-block">Verificar compra</Link>
 
                         </div>
                     </div>
@@ -133,8 +138,8 @@ const Cart = props => {
                             <div className={isActiveCupon ? "collapse show": "collapse"}>
                                 <div className="mt-3">
                                     <div className="md-form md-outline mb-0">
-                                        <input type="text"className="form-control font-weight-light"
-                                        placeholder="Escriba su código de descuento" />
+                                        <input type="text" className="form-control font-weight-light"
+                                        placeholder="Escriba su código de descuento" onChange={handlePromo}/>
                                     </div>
                                 </div>
                             </div>
