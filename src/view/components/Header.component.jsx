@@ -42,10 +42,32 @@ const HeaderComponent = props => {
                 <div className="d-flex flex-wrap  align-items-center justify-content-center justify-content-lg-start sub-container-header">
                     <Link className="d-flex align-items-center mb-lg-0 text-dark text-decoration-none text-uppercase fw-bold fs-3 br-10 p-2 store-link-navbar" to="/">STORE</Link>
                     <ul className="nav col-12 col-lg-auto me-lg-auto mb-md-0 links-navbar justify-content-around list-nav-items-store">
-                        <li><a href="#" className="nav-link px-2 link-dark">Categorias</a></li>
-                        <li><a href="#" className="nav-link px-2 link-dark">Ofertas</a></li>
-                        <li><a href="#" className="nav-link px-2 link-dark">Explorar</a></li>
-                        <li><button className="nav-link px-2 link-dark" type="button"  data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample"><FontAwesomeIcon icon={faBars} /></button></li>
+                        <li>
+                            <Link to="/categories" className="nav-link px-2 link-dark">
+                                Categorias
+                            </Link>
+                        </li>
+                        <li>
+                            <a href="#" className="nav-link px-2 link-dark">
+                                Ofertas
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" className="nav-link px-2 link-dark">
+                                Explorar
+                            </a>
+                        </li>
+                        <li>
+                            <button 
+                                className="nav-link px-2 link-dark" 
+                                type="button" 
+                                data-bs-toggle="offcanvas" 
+                                data-bs-target="#offcanvasExample" 
+                                aria-controls="offcanvasExample"
+                            >
+                                <FontAwesomeIcon icon={faBars} />
+                            </button>
+                            </li>
                     </ul> 
                     <div className="offcanvas offcanvas-start d-flex flex-column flex-shrink-0 p-3 bg-light" tabIndex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
                         <div className="offcanvas-header">
@@ -69,10 +91,10 @@ const HeaderComponent = props => {
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#" className="nav-link link-dark">
+                                    <Link to="/categories" className="nav-link link-dark">
                                         <FontAwesomeIcon className="bi me-2" icon={faHome} />
                                         Categorias 
-                                    </a>
+                                    </Link>
                                 </li>
                                 <li>
                                     <a href="#" className="nav-link link-dark">
