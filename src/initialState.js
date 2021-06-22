@@ -147,21 +147,42 @@ const initialState = {
         },
     ],
     "categories": [{
-        "id": 1,
-        "title": "Elegante",
-        "rating": 4,
-        "cover": "https://via.placeholder.com/300.png/000/fff"
-    }, {
-        "id": 2,
-        "title": "Casual",
-        "rating": 4,
-        "cover": "https://via.placeholder.com/300.png/000/fff"
-    }, {
-        "id": 3,
-        "title": "Especial",
-        "rating": 4,
-        "cover": "https://via.placeholder.com/300.png/000/fff"
-    }, ]
+            "id": 1,
+            "title": "Elegante",
+            "rating": 4,
+            "cover": "https://via.placeholder.com/300.png/000/fff"
+        },
+        {
+            "id": 2,
+            "title": "Casual",
+            "rating": 4,
+            "cover": "https://via.placeholder.com/300.png/000/fff"
+        },
+        {
+            "id": 3,
+            "title": "Especial",
+            "rating": 4,
+            "cover": "https://via.placeholder.com/300.png/000/fff"
+        },
+        {
+            "id": 4,
+            "title": "Elegante",
+            "rating": 4,
+            "cover": "https://via.placeholder.com/300.png/000/fff"
+        },
+        {
+            "id": 5,
+            "title": "Casual",
+            "rating": 4,
+            "cover": "https://via.placeholder.com/300.png/000/fff"
+        },
+        {
+            "id": 6,
+            "title": "Especial",
+            "rating": 4,
+            "cover": "https://via.placeholder.com/300.png/000/fff"
+        },
+    ]
 }
 
 export default initialState;
