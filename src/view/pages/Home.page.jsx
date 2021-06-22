@@ -8,10 +8,10 @@ import {connect} from 'react-redux';
 import Header from '../components/Header.component';
 import ItemCard from '../components/ItemCard.component';
 import GoToTop from '../components/GoToTop.component';
+import Category from '../components/CategoryCard.component';
 
 // Styles
 import '../../assets/styles/pages/Home.page.scss';
-import Category from '../components/CategoryCard.component';
 
 
 const HomePage = (props) => {
@@ -20,6 +20,10 @@ const HomePage = (props) => {
     const items = products.sort((a, b)=>{
         return b["rating"] - a["rating"]
     }).slice(0,4);
+
+    const cate = categories.sort((a, b)=>{
+        return b["rating"] - a["rating"]
+    }).slice(0,4)
 
     return (
         <>
@@ -57,7 +61,7 @@ const HomePage = (props) => {
                 <div className="section-content">
                     <p className="text-black text-center text-bold">Estas son las categorias mas visitadas por nuestros clientes</p>
                     <div className="container-card">
-                        {categories.map(category => 
+                        {cate.map(category => 
                             <Category
                                 key={category.id}
                                 {...category}
