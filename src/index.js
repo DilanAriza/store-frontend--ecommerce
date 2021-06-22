@@ -10,7 +10,7 @@ import {createStore, compose} from 'redux'
 import reducer from './reducers';
 
 //App
-import App from './routes/App';
+import App from './routes/App.routes';
 import initialState from './initialState';
 
 //Styles
