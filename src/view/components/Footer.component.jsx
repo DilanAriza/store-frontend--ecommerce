@@ -1,7 +1,7 @@
 import React from 'react';
-import '../../assets/styles/components/Footer.scss';
+import '../../assets/styles/components/Footer.component.scss';
 
-const Footer = () => (
+const FooterComponent = () => (
   <footer className="footer">
     <a href="/">Terminos de uso</a>
     <a href="/">Declaración de privacidad</a>
@@ -9,4 +9,4 @@ const Footer = () => (
   </footer>
 );
 
-export default Footer;
+export default FooterComponent;

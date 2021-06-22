@@ -15,7 +15,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown, faInfoCircle, faMinus, faPlus, faTrash } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 
-const CheckoutCart = props => {
+const CheckoutCartPage = props => {
     const {myCart, priceCart, tax} = props;
     const items = myCart.length;
     const [isActiveCupon, setIsActiveCupon] = useState(false);
@@ -181,4 +181,4 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps, null)(CheckoutCart)
+export default connect(mapStateToProps, null)(CheckoutCartPage)

@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 import {connect} from 'react-redux';
 
 //Styles 
-import '../../assets/styles/components/Category.scss';
+import '../../assets/styles/components/Category.component.scss';
 
-const Category = (props) =>{
+const CategoryComponent = (props) =>{
     const {id, title, cover} = props;
     
     return(
@@ -20,4 +20,4 @@ const Category = (props) =>{
     )
 };
 
-export default connect(null, null)(Category)
+export default connect(null, null)(CategoryComponent)

@@ -19,7 +19,7 @@ import {
     changeItemMount
 } from '../../actions';
 
-const Item = props => {
+const ItemPage = props => {
     
     // Search information of product to props
     useLayoutEffect(()=>{
@@ -169,4 +169,4 @@ const mapDispatchToProps = {
     changeItemMount
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Item)
+export default connect(mapStateToProps, mapDispatchToProps)(ItemPage)

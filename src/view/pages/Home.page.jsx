@@ -14,7 +14,7 @@ import '../../assets/styles/pages/Home.page.scss';
 import Category from '../components/CategoryCard.component';
 
 
-const Home = (props) => {
+const HomePage = (props) => {
     const { myCart, products, tax, categories } = props;
 
     const items = products.sort((a, b)=>{
@@ -81,4 +81,4 @@ const mapStateToProps = state => {
     };
 } 
 
-export default connect(mapStateToProps, null)(Home)
+export default connect(mapStateToProps, null)(HomePage)

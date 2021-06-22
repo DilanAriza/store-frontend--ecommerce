@@ -10,15 +10,6 @@ import GoToTop from '../components/GoToTop.component';
 // Styles
 import '../../assets/styles/pages/Item.page.scss';
 
-//Actions
-import { 
-    addToCart, 
-    getInfoProduct, 
-    addPriceToCart, 
-    removePriceToCart,
-    changeItemMount
-} from '../actions';
-
 const Item = props => {
     
     // Search information of product to props

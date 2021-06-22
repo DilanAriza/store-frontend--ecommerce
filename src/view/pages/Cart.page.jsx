@@ -3,7 +3,7 @@ import React, { useState, useLayoutEffect } from 'react';
 import {connect} from 'react-redux';
 
 // Components
-import Header from '../components/Header.component';
+import HeaderPage from '../components/Header.component';
 import ItemCartToPay from '../components/ItemCartToPay.component';
 import GoToTop from '../components/GoToTop.component';
 
@@ -41,7 +41,7 @@ const CartPage = props => {
 
     return (
         <>
-        <Header />
+        <HeaderPage />
         <div className="cart-page">
             <div className="container">
                 <div className="row">

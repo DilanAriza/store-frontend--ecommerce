@@ -17,7 +17,7 @@ import {
     addPriceToCart,
 } from '../../actions';
 
-const ItemCartToPay = props => {
+const ItemCartToPayComponent = props => {
     const {myCart, products, id} = props;
     
     // Define 
@@ -146,4 +146,4 @@ const mapDispatchToProps = {
     addPriceToCart,
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(ItemCartToPay)
+export default connect(mapStateToProps, mapDispatchToProps)(ItemCartToPayComponent)

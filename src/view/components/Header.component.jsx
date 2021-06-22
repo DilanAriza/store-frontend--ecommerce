@@ -19,10 +19,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars, faHome, faPersonBooth, faUser, faUserCircle, faUserLock } from '@fortawesome/free-solid-svg-icons'
 
 //Styles 
-import '../../assets/styles/components/Header.scss'
+import '../../assets/styles/components/Header.component.scss'
 
 
-const Header = props => {
+const HeaderComponent = props => {
 
     const {user, isLogin, isRegister} = props;
     const hasUser = Object.keys(user).length > 0; 
@@ -156,7 +156,7 @@ const Header = props => {
     );
 }
 
-Header.propTypes = {
+HeaderComponent.propTypes = {
     user: PropTypes.object
 }
 
@@ -170,4 +170,4 @@ const mapDispatchToProps = {
     logoutRequest,
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Header)  
+export default connect(mapStateToProps, mapDispatchToProps)(HeaderComponent)  

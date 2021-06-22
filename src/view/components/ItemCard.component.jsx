@@ -4,12 +4,12 @@ import {connect} from 'react-redux';
 import Rating from '@material-ui/lab/Rating';
 
 //Styles 
-import '../../assets/styles/components/ItemCard.scss';
+import '../../assets/styles/components/ItemCard.component.scss';
 
 //Actions
 import { addToCart } from '../../actions';
 
-const ItemCard = (props) =>{
+const ItemCardComponent = (props) =>{
     const {id, title, rating, cover} = props;
     
     return(
@@ -31,4 +31,4 @@ const mapDispatchToProps = {
     addToCart
 }
 
-export default connect(null, mapDispatchToProps)(ItemCard)
+export default connect(null, mapDispatchToProps)(ItemCardComponent)

@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 import '../../assets/styles/pages/NotFound.page.scss';
 
-const NotFound = () => (
+const NotFoundPage = () => (
     <div className="not-found">
         <div className="not-found__content-message">
             <h1>Error <code>404</code></h1>
@@ -12,4 +12,4 @@ const NotFound = () => (
     </div>
 );
 
-export default NotFound;
+export default NotFoundPage;
