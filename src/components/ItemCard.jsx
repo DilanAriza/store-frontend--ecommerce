@@ -10,11 +10,11 @@ import '../assets/styles/components/ItemCard.scss';
 import { addToCart } from '../actions';
 
 const ItemCard = (props) =>{
-    const {id, title, description, rating, cover} = props;
+    const {id, title, rating, cover} = props;
     
     return(
         <div key={id} >
-            <Link className="card" to={`/item/${id}`}>
+            <Link className="card products" to={`/item/${id}`}>
                 <img src={cover} className="card-img-top" alt="cover-image-card"/>
                 <div className="card-body">
                     <h5 className="card-title">{title}</h5>

@@ -11,11 +11,19 @@ import GoToTop from '../components/GoToTop';
 
 // Styles
 import '../assets/styles/containers/Home.scss';
+import Category from '../components/Category';
 
 
 const Home = (props) => {
-    const { myCart, trends, tax } = props;
+    const { myCart, products, tax, categories } = props;
+
+    const items = products.sort((a, b)=>{
+        return b["rating"] - a["rating"]
+    }).slice(0,4);
     
+
+    console.log(categories);
+
     return (
         <>
         <Header />
@@ -30,14 +38,30 @@ const Home = (props) => {
                 </div>
             </div>
         </div>
-        {trends.length > 0 &&
+        {products.length > 0 &&
         <div className="container mt-5 pt-2">
-            <h1 className="text-break d-fles text-center fs-1 m-5">Productos destacados</h1>
-                <div className="trends">
+            <h1 className="text-break text-center fs-1 m-5">Productos destacados</h1>
+                <div className="section-content">
                     <p className="text-black text-center text-bold">Estos son los productos mejor calificados por nuestros clientes</p>
                     <div className="container-card">
-                        {trends.map(item => 
+                        {items.map(item => 
                             <ItemCard 
+                                key={item.id}
+                                {...item}
+                            />    
+                        )}
+                    </div>
+                </div>
+        </div>
+        }
+        {categories.length > 0 &&
+        <div className="container mt-2 pt-2">
+            <h1 className="text-break text-center fs-1 m-5">Categorias destacados</h1>
+                <div className="section-content">
+                    <p className="text-black text-center text-bold">Estas son las categorias mas visitadas por nuestros clientes</p>
+                    <div className="container-card">
+                        {categories.map(item => 
+                            <Category
                                 key={item.id}
                                 {...item}
                             />    
@@ -54,8 +78,9 @@ const Home = (props) => {
 const mapStateToProps = state => {
     return {
         myCart: state.myCart,
-        trends: state.trends,
+        products: state.products,
         tax: state.tax,
+        categories: state.categories,
     };
 } 
 

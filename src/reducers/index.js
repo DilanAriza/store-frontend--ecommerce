@@ -14,7 +14,7 @@ const reducer = (state, action) => {
             let saveAmount;
 
             // Search product and save price amount product from payload
-            const product = state.trends.find(item => item.id === action.payload.id);
+            const product = state.products.find(item => item.id === action.payload.id);
             let priceProduct = (product.price * action.payload.amount);
 
             // Verify if this id exist in the state
@@ -75,7 +75,7 @@ const reducer = (state, action) => {
         case actions.getInfoProduct:
             return {
                 ...state,
-                product: state.trends.find(item => item.id === Number(action.payload)) || []
+                product: state.products.find(item => item.id === Number(action.payload)) || []
             }
 
 

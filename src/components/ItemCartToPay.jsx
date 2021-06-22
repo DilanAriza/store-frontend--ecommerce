@@ -18,13 +18,13 @@ import {
 } from '../actions';
 
 const ItemCartToPay = props => {
-    const {myCart, trends, id} = props;
+    const {myCart, products, id} = props;
     
     // Define 
     // const [amountState, setAmountState] = useState(amount);
     
     // Define consts
-    const searchItem = trends.filter(item => item.id === id);
+    const searchItem = products.filter(item => item.id === id);
     const item = searchItem[0];
     const product = myCart.find(item => item.id === id);
 
@@ -133,7 +133,7 @@ const ItemCartToPay = props => {
 const mapStateToProps = state => {
     return {
         myCart: state.myCart,
-        trends: state.trends,
+        products: state.products,
         user: state.user,
         product: state.product
     }

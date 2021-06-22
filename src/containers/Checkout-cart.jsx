@@ -174,7 +174,7 @@ const CheckoutCart = props => {
 const mapStateToProps = state => {
     return {
         myCart: state.myCart,
-        trends: state.trends,
+        products: state.products,
         user: state.user,
         priceCart: state.priceCart,
         tax: state.tax,
