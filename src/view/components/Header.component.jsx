@@ -85,25 +85,25 @@ const HeaderComponent = props => {
                                     </form>
                                 </li>
                                 <li className="nav-item">
-                                    <a href="#" className="nav-link active" aria-current="page">
+                                    <a href="#" className="nav-link active" data-bs-dismiss="offcanvas" aria-label="Close">
                                         <FontAwesomeIcon className="bi me-2" icon={faHome} />
                                         Inicio
                                     </a>
                                 </li>
                                 <li>
-                                    <Link to="/categories" className="nav-link link-dark">
+                                    <Link to="/categories" className="nav-link link-dark" data-bs-dismiss="offcanvas" aria-label="Close">
                                         <FontAwesomeIcon className="bi me-2" icon={faHome} />
                                         Categorias 
                                     </Link>
                                 </li>
                                 <li>
-                                    <a href="#" className="nav-link link-dark">
+                                    <a href="#" className="nav-link link-dark" data-bs-dismiss="offcanvas" aria-label="Close">
                                         <FontAwesomeIcon className="bi me-2" icon={faHome} />
                                         Ofertas
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#" className="nav-link link-dark">
+                                    <a href="#" className="nav-link link-dark" data-bs-dismiss="offcanvas" aria-label="Close">
                                         <FontAwesomeIcon className="bi me-2" icon={faHome} />
                                         Explorar
                                     </a>
